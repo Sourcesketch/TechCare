@@ -1,0 +1,53 @@
+// Typography
+$root_font: 1rem;
+$fontFamily: (
+    "extralight":"ExtraLight",
+    "light": 'Manrope-Light',
+    "regular": 'Manrope-Regular',
+    "medium": 'Manrope-Medium' ,
+    "semibold": 'Manrope-Semibold' ,
+    "bold": 'Manrope-Bold',
+    "extrabold": 'Manrope-ExtraBold',
+);
+
+// theme colors 
+$themeColors: (
+    "white": #ffffff,
+    "black": #000000,
+    "aliceBlue": #F6F7F8,
+    "scrollbar-track": #E3E4E6,
+    "scrollbar-thumb": #072635,
+    "primary": #072635,
+    "secondary": #707070,
+    "divider": #EDEDED,
+    "patient-activeState": #D8FCF7,
+    "btn": #01F0D0,
+    "card1": #E0F3FA,
+    "card2": #FFE6E9,
+    "card3": #FFE6F1,
+    "chart": #F4F0FE,
+    "systolic": #E66FD2,
+    "diastolic": #8C6FE6,
+);
+
+// border radius 
+$borderRadius: (
+    "4": 4,
+    "6": 6,
+    "8": 8,
+    "10": 10,
+    "12": 12,
+    "14": 14,
+    "16": 16,
+    "24": 24,
+    "70": 70
+);
+
+// positoning elements
+$postions: (
+    "relative": relative,
+    "absolute": absolute,
+    "sticky": sticky,
+    "fixed": fixed,
+);
+

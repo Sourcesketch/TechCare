@@ -1,0 +1,316 @@
+@import url("../_internal/variables.scss");
+.tc-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: pxToRem(32);
+   //height: calc(100vh - 36px);
+  // header
+  .tc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: pxToRem(72);
+    &__links {
+      ul {
+        display: flex;
+        align-items: center;
+        gap: pxToRem(40);
+        padding: 0;
+        li {
+          list-style: none;
+          a {
+            display: flex;
+            align-items: center;
+            gap: pxToRem(9);
+            font-family: map-get($fontFamily, "bold");
+            color: map-get($themeColors, "primary");
+            font-size: pxToRem(14);
+            padding: pxToRem(12) pxToRem(16);
+            border-radius: pxToRem(41);
+            &:hover,
+            &:active,
+            &.active {
+              background-color: map-get($themeColors, "btn");
+            }
+          }
+        }
+      }
+    }
+    &__user {
+      display: flex;
+      gap: pxToRem(12);
+    }
+    &__userinfo {
+      display: flex;
+      gap: pxToRem(8);
+      .user-image {
+        border-radius: 50%;
+      }
+      .user-meta {
+        display: flex;
+        flex-direction: column;
+        padding-right: pxToRem(12);
+        border-right: 1px solid map-get($themeColors, "divider");
+      }
+    }
+  }
+  //main
+  .tc-main {
+    &__inner {
+      display: flex;
+      gap: pxToRem(32);
+      section {
+        background-color: map-get($themeColors, "white");
+        border-radius: 1rem;
+        height: 100%;
+        opacity: 1;
+
+        &:nth-of-type(1) {
+          flex-grow: 1;
+          .patients-wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            row-gap: pxToRem(24);
+            .patients-list {
+              display: flex;
+              flex-direction: column;
+              overflow: auto;
+              max-height: pxToRem(1152);
+              .patient {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 1.25rem;
+                .patient-data {
+                  display: flex;
+                  align-items: center;
+                  gap: pxToRem(12);
+                  img {
+                    border-radius: 50%;
+                  }
+                }
+                &:hover,
+                &:active,&.active {
+                  background-color: map-get(
+                    $themeColors,
+                    "patient-activeState"
+                  );
+                }
+              }
+              &::-webkit-scrollbar {
+                width: pxToRem(6);
+              }
+              &::-webkit-scrollbar-thumb {
+                border-radius: pxToRem(3);
+                background-color: map-get($themeColors, "scrollbar-thumb");
+              }
+
+              &::-webkit-scrollbar-track {
+                border-radius: pxToRem(3);
+                background-color: map-get($themeColors, "scrollbar-track");
+              }
+            }
+          }
+        }
+        &:nth-of-type(2) {
+          flex-grow: 2;
+          background-color: transparent !important;
+          .main-center {
+            display: flex;
+            flex-direction: column;
+            row-gap: pxToRem(32);
+            height: 100%;
+            .diagnosis-history {
+                background-color: map-get($themeColors, "white");
+                border-radius: 1rem;
+                flex-grow: 2;
+                display: flex;
+                flex-direction: column;
+                row-gap: pxToRem(40);
+                .dignosis-detail {
+                    display: flex;
+                    flex-direction: column;
+                    gap: pxToRem(20);
+                    .diagnosis-history-graph {
+                      
+                    }
+                    .diagnosis-history-cards{
+                        display: flex;
+                        gap: pxToRem(20);
+                        .card {
+                            padding: 1rem;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1rem;
+                            width: 100%;
+                            border-radius: pxToRem(12);
+                        }
+                    }
+                }
+            }
+            .diagnosis-list {
+                background-color: map-get($themeColors, "white");
+                border-radius: 1rem;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                row-gap: pxToRem(40);
+                .diagnosis-table {
+                    overflow: auto;
+                    max-height: pxToRem(275);
+                    margin-right: pxToRem(20);
+                    table {
+                        border-collapse: collapse;
+                        thead {
+                            position: sticky;
+                            top: 0;
+                            tr {
+                                th {
+                                    padding: pxToRem(15) pxToRem(16);
+                                    text-align: left;
+                                    &:first-child{
+                                        border-radius:pxToRem(10) 0 0 pxToRem(10);
+                                      }
+                                    &:last-child{
+                                        border-radius:0 pxToRem(10) pxToRem(10) 0;
+                                      }
+                                }
+                            }
+                        }
+                        tbody {
+                            tr {
+                                td {
+                                    padding: pxToRem(20) pxToRem(16);
+                                    text-align: left;
+                                }
+                            }
+                        }
+                    }
+                    &::-webkit-scrollbar {
+                        width: pxToRem(6);
+                      }
+                      &::-webkit-scrollbar-thumb {
+                        border-radius: pxToRem(3);
+                        background-color: map-get($themeColors, "scrollbar-thumb");
+                      }
+      
+                      &::-webkit-scrollbar-track {
+                        border-radius: pxToRem(3);
+                        background-color: map-get($themeColors, "scrollbar-track");
+                      } 
+                }
+
+            }
+            
+          }
+        }
+        &:nth-of-type(3) {
+          flex-grow: 1;
+          background-color: transparent !important;
+          .main-right {
+            display: flex;
+            flex-direction: column;
+            row-gap: pxToRem(32);
+            height: 100%;
+            .patient-details {
+              background-color: map-get($themeColors, "white");
+              border-radius: 1rem;
+              flex-grow: 2;
+              .patient-image {
+                border-radius: 50%;
+                margin: 0 auto;
+              }
+              .pat-wrapper,
+              .pat-wrapper,
+              .pat-wrapper {
+                display: flex;
+                gap: pxToRem(12);
+                .pat-data,
+                .pat-data,
+                .pat-data {
+                  display: flex;
+                  flex-direction: column;
+                }
+              }
+            }
+            .lab-results {
+              background-color: map-get($themeColors, "white");
+              border-radius: 1rem;
+              flex-grow: 1;
+              .lab-detail {
+                overflow: auto;
+                max-height: pxToRem(387);
+                margin-right: pxToRem(20);
+                .lab-test {
+                  &:hover {
+                    background-color: map-get($themeColors, "aliceBlue");
+                  }
+                }
+                &::-webkit-scrollbar {
+                  width: pxToRem(6);
+                }
+                &::-webkit-scrollbar-thumb {
+                  border-radius: pxToRem(3);
+                  background-color: map-get($themeColors, "scrollbar-thumb");
+                }
+
+                &::-webkit-scrollbar-track {
+                  border-radius: pxToRem(3);
+                  background-color: map-get($themeColors, "scrollbar-track");
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// highvcharts
+
+.highcharts-figure,
+.highcharts-data-table table {
+    min-width: 360px;
+    max-width: 800px;
+    margin: 1em 0;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: map-get($themeColors, 'chart-bg');
+}
+
+.highcharts-data-table tr:hover {
+    background: map-get($themeColors, 'chart-bg');
+}

@@ -1,0 +1,35 @@
+@import url("../_internal/variables.scss");
+.tc-wrapper .tc-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  min-height: pxToRem(72);
+}
+.tc-wrapper .tc-header__links ul {
+  display: flex;
+  align-items: center;
+  gap: pxToRem(40);
+  padding: 0;
+}
+.tc-wrapper .tc-header__links ul li {
+  list-style: none;
+}
+.tc-wrapper .tc-header__links ul li a {
+  display: flex;
+  align-items: center;
+  gap: pxToRem(9);
+}
+.tc-wrapper .tc-header__user {
+  display: flex;
+  gap: pxToRem(12);
+}
+.tc-wrapper .tc-header__userinfo {
+  display: flex;
+  gap: pxToRem(8);
+}
+.tc-wrapper .tc-header__userinfo .user-meta {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+}/*# sourceMappingURL=element.css.map */

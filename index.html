@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Healthcare Dashboard for TechCare" />
+    <meta
+      name="keywords"
+      content="healthcare, healthcare dashboard, dashboard, patients,diagnostic, lab "
+    />
+    <meta name="author" content="Quratulain Shakeel" />
+    <!-- <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico" /> -->
+
+    <link rel="stylesheet" href="./src/global.css" />
+
+    <title>Tech Care</title>
+  </head>
+  <body>
+    <div class="tc-wrapper" id="wrapper">
+      <!--header-->
+      <header class="tc-header bg-white rounded-70 px-32 py-12" id="header">
+        <div class="tc-header__logo">
+          <img src="./assets/images/TestLogo.svg" alt="TechCare-logo" />
+        </div>
+        <div class="tc-header__links">
+          <ul>
+            <li>
+              <a href="/">
+                <img
+                  src="./assets/images/home_FILL0_wght300_GRAD0_opsz24.svg"
+                  alt="home"
+                />
+                Overview
+              </a>
+            </li>
+            <li>
+              <a href="/" class="active">
+                <img
+                  src="./assets/images/group_FILL0_wght300_GRAD0_opsz24.svg"
+                  alt="patients"
+                />
+                Patients
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <img
+                  src="./assets/images/calendar_today_FILL0_wght300_GRAD0_opsz24.svg"
+                  alt="home"
+                />
+                Schedule
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <img
+                  src="./assets/images/chat_bubble_FILL0_wght300_GRAD0_opsz24.svg"
+                  alt="home"
+                />
+                Message
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <img
+                  src="./assets/images/credit_card_FILL0_wght300_GRAD0_opsz24.svg"
+                  alt="home"
+                />
+                Transactions
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="tc-header__user">
+          <div class="tc-header__userinfo">
+            <img
+              class="user-image w-44 h-44"
+              src="./assets/images/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc.png"
+              alt="user-profile"
+            />
+            <div class="user-meta">
+              <span class="user-name font-family-bold fs-14 text-primary"
+                >Dr. Jose Simmons</span
+              >
+              <span
+                class="user-speciality font-family-regular fs-14 text-secondary"
+                >General Practitioner</span
+              >
+            </div>
+          </div>
+          <img
+            src="./assets/images/settings_FILL0_wght300_GRAD0_opsz24.svg"
+            alt="settings"
+          />
+          <img
+            src="./assets/images/more_vert_FILL0_wght300_GRAD0_opsz24.svg"
+            alt="more-features"
+          />
+        </div>
+      </header>
+      <!--main-->
+      <main class="tc-main flex-fill overflow-hidden h-full w-full" id="main">
+        <div class="tc-main__inner h-full">
+          <section>
+            <div class="patients-wrapper">
+              <div class="patients-header flex-between p-20">
+                <h4 class="title font-family-extrabold fs-24 text-primary">
+                  Patients
+                </h4>
+                <img
+                  src="./assets/images/search_FILL0_wght300_GRAD0_opsz24.svg"
+                  alt="search"
+                />
+              </div>
+              <div class="patients-list" id="list"></div>
+            </div>
+          </section>
+          <section>
+            <div class="main-center">
+              <div class="diagnosis-history p-20">
+                <div class="diagnosis-header flex-between">
+                  <h4 class="title font-family-extrabold fs-24 text-primary">
+                    Diagnosis History
+                  </h4>
+                </div>
+                <div class="dignosis-detail">
+                  <div
+                    class="diagnosis-history-graph bg-chart rounded-12 d-flex align-items-center gap-33"
+                  >
+                    <figure class="highcharts-figure w-full">
+                      <div id="container"></div>
+                    </figure>
+                    <div class="d-flex flex-column gap-33">
+                      <div class="systolic-legend">
+                        <div class="d-flex flex-column gap-8">
+                          <span
+                            class="fs-18 font-family-bold text-primary legend-1 d-flex align-items-center gap-8"
+                          >
+                            <div class="w-8 h-8 bg-systolic rounded-half"></div>
+                            Systolic
+                          </span>
+                          <span class="fs-22 font-family-bold text-primary">
+                            160
+                          </span>
+                          <span
+                            class="d-flex fs-14 font-family-regular text-primary"
+                          >
+                            <img
+                              src="./assets/images/ArrowUp.svg"
+                              alt="up"
+                              class="pe-8 d-block"
+                            />
+                            Higher than Average</span
+                          >
+                        </div>
+                      </div>
+                      <div class="diastolic-legend">
+                        <div class="d-flex flex-column gap-8">
+                          <span
+                            class="fs-18 font-family-bold text-primary legend-2 d-flex align-items-center gap-8"
+                            ><div
+                              class="w-8 h-8 bg-diastolic rounded-half"
+                            ></div>
+                            Diastolic
+                          </span>
+                          <span class="fs-22 font-family-bold text-primary">
+                            78
+                          </span>
+                          <span
+                            class="d-flex fs-14 font-family-regular text-primary"
+                          >
+                            <img
+                              src="./assets/images/ArrowDown.svg"
+                              alt="down"
+                              class="pe-8 d-block"
+                            />
+                            Lower than Average</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="diagnosis-history-cards">
+                    <div
+                      class="respiratory-card card bg-card1"
+                      id="card1"
+                    ></div>
+                    <div class="temp-card card bg-card2" id="card2"></div>
+                    <div class="heart-rate-card card bg-card3" id="card3"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="diagnosis-list p-20">
+                <div class="diagnosis-header flex-between">
+                  <h4 class="title font-family-extrabold fs-24 text-primary">
+                    Diagnosis List
+                  </h4>
+                </div>
+                <div class="diagnosis-table">
+                  <table class="w-full h-full">
+                    <thead class="bg-aliceBlue">
+                      <tr>
+                        <th>Problem/Diagnosis</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="diagnosislist"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="main-right">
+              <div class="patient-details px-20 py-32" id="details"></div>
+              <div class="lab-results">
+                <div class="lab-header flex-between p-20">
+                  <h4 class="title font-family-extrabold fs-24 text-primary">
+                    Lab Results
+                  </h4>
+                </div>
+                <div class="lab-detail pt-16 px-20" id="tests"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="./src/js/chart.js"></script>
+    <script defer>
+      //api call
+      var user = "coalition"; //  username
+      var pass = "skills-test"; //    passowrd
+      let url = "https://fedskillstest.coalitiontechnologies.workers.dev"; // get all patients
+
+      fetch(url, {
+        method: "GET",
+        headers: { Authorization: "Basic " + btoa(user + ":" + pass) },
+      })
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          console.log(data);
+       
+          // patient
+          data.forEach((patient) => {
+            const markup = `
+            <div class="patient">
+                  <div class="patient-data">
+                    <img
+                    src="${patient.profile_picture}"
+                      class="w-48 h-48 d-block"
+                      alt="patient-image"
+                    />
+                    <div class="patient-meta">
+                      <div
+                        class="patient-name fs-14 font-family-bold text-primary"
+                      >
+                      ${patient.name}
+                      </div>
+                      <div
+                        class="patient-meta fs-14 font-family-regular text-secondary"
+                      >
+                        <span class="gender"> ${patient.gender}:</span>
+                        <span class="age">${patient.age}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="more-feature">
+                    <img
+                      src="./assets/images/more_horiz_FILL0_wght300_GRAD0_opsz24.svg"
+                      alt="more-feature"
+                    />
+                  </div>
+                </div>
+            `;
+            document
+              .querySelector("#list")
+              .insertAdjacentHTML("beforeend", markup);
+              
+          });
+          //card1
+          const cardMarkup = `
+           <img
+                        src="./assets/images/respiratory rate.svg"
+                        class="w-96 h-96 d-block"
+                        alt="respiratory-rate"
+                      />
+            <span class="fs-16 font-family-medium text-primary"
+                        >Respiratory Rate</span
+                      >
+                      <h4 class="font-family-extrabold fs-30 text-primary">
+                        ${data[3].diagnosis_history[0].respiratory_rate.value}
+                      </h4>
+                      <span class="fs-14 font-family-regular text-primary"
+                        >  ${data[3].diagnosis_history[0].respiratory_rate.levels}</span
+                      >
+           `;
+          document
+            .querySelector("#card1")
+            .insertAdjacentHTML("beforeend", cardMarkup);
+          //card2
+          const cardMarkup2 = `
+           <img
+                        src="./assets/images/temperature.svg"
+                        class="w-96 h-96 d-block"
+                        alt="respiratory-rate"
+                      />
+            <span class="fs-16 font-family-medium text-primary"
+                        >Respiratory Rate</span
+                      >
+                      <h4 class="font-family-extrabold fs-30 text-primary">
+                        ${data[3].diagnosis_history[0].temperature.value}
+                      </h4>
+                      <span class="fs-14 font-family-regular text-primary"
+                        >  ${data[3].diagnosis_history[0].temperature.levels}</span
+                      >
+           `;
+          document
+            .querySelector("#card2")
+            .insertAdjacentHTML("beforeend", cardMarkup2);
+          //card3
+          const cardMarkup3 = `
+           <img
+                        src="./assets/images/HeartBPM.svg"
+                        class="w-96 h-96 d-block"
+                        alt="respiratory-rate"
+                      />
+            <span class="fs-16 font-family-medium text-primary"
+                        >Respiratory Rate</span
+                      >
+                      <h4 class="font-family-extrabold fs-30 text-primary">
+                        ${data[3].diagnosis_history[0].heart_rate.value}
+                      </h4>
+                      <span class="fs-14 font-family-regular text-primary"
+                        >  ${data[3].diagnosis_history[0].heart_rate.levels}</span
+                      >
+           `;
+          document
+            .querySelector("#card3")
+            .insertAdjacentHTML("beforeend", cardMarkup3);
+          //diagnosis list
+          data[3].diagnostic_list.forEach((item, i) => {
+            var row = document.querySelector("#diagnosislist").insertRow();
+            row.insertCell(0).innerHTML = item.name;
+            row.insertCell(1).innerHTML = item.description;
+            row.insertCell(2).innerHTML = item.status;
+          });
+
+          //details
+          const detail = `
+            <img
+                  src="${data[3].profile_picture}"
+                  alt="patient-image"
+                  class="patient-image w-200 h-200 d-block"
+                />
+                <span
+                  class="font-family-extrabold text-primary fs-24 pt-24 text-center d-block"
+                  >${data[3].name}</span
+                >
+                <div class="pat-wrapper pt-32">
+                  <img src="./assets/images/BirthIcon.svg" alt="dob" />
+                  <div class="pat-data">
+                    <span class="fs-14 font-family-medium text-primary"
+                      >Date of Birth</span
+                    >
+                    <span class="fs-14 font-family-bold text-primary"
+                      >${data[3].date_of_birth}</span
+                    >
+                  </div>
+                </div>
+                <div class="pat-wrapper pt-32">
+                  <img src="./assets/images/FemaleIcon.svg" alt="gender" />
+                  <div class="pat-data">
+                    <span class="fs-14 font-family-medium text-primary"
+                      >Gender</span
+                    >
+                    <span class="fs-14 font-family-bold text-primary"
+                      >${data[3].gender}</span
+                    >
+                  </div>
+                </div>
+                <div class="pat-wrapper pt-32">
+                  <img src="./assets/images/PhoneIcon.svg" alt="contatt-info" />
+                  <div class="pat-data">
+                    <span class="fs-14 font-family-medium text-primary"
+                      >Contact Info.</span
+                    >
+                    <span class="fs-14 font-family-bold text-primary"
+                      >${data[3].phone_number}</span
+                    >
+                  </div>
+                </div>
+                <div class="pat-wrapper pt-32">
+                  <img src="./assets/images/PhoneIcon.svg" alt="contatt-info" />
+                  <div class="pat-data">
+                    <span class="fs-14 font-family-medium text-primary"
+                      >Emergency Contacts</span
+                    >
+                    <span class="fs-14 font-family-bold text-primary"
+                      >${data[3].emergency_contact}</span
+                    >
+                  </div>
+                </div>
+                <div class="pat-wrapper pt-32">
+                  <img src="./assets/images/PhoneIcon.svg" alt="contatt-info" />
+                  <div class="pat-data">
+                    <span class="fs-14 font-family-medium text-primary"
+                      >Insurance Provider</span
+                    >
+                    <span class="fs-14 font-family-bold text-primary"
+                      >${data[3].insurance_type}</span
+                    >
+                  </div>
+                </div>
+                <button>Show All Information</button>
+            `;
+          document
+            .querySelector("#details")
+            .insertAdjacentHTML("beforeend", detail);
+          //lab results
+          data[3].lab_results.forEach((item, i) => {
+            console.log(item);
+            const testdata = `
+               <div class="lab-test flex-between px-16 py-11">
+                    <span  
+                      class="lab-test-name font-family-regular fs-13 text-primary"
+                      >${item}</span
+                    >
+                    <img
+                      src="./assets/images/download_FILL0_wght300_GRAD0_opsz24 (1).svg"
+                      alt="download-file"
+                    />
+                  </div>`;
+            document
+              .querySelector("#tests")
+              .insertAdjacentHTML("beforeend", testdata);
+          });
+           
+          if(data.some(item => item.name === 'Jessica Taylor')) {
+            document.querySelector(".patient").classList.add("active");
+          }
+        })
+
+        .catch((error) => console.log(error));
+    </script>
+  </body>
+</html>

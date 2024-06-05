@@ -1,0 +1,140 @@
+@import "./variables.scss";
+
+/* theme colors for text and backgrounds */
+@each $name, $color in $themeColors {
+  .text-#{$name} {
+    color: $color;
+  }
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}
+/* theme font family */
+@each $fname, $family in $fontFamily {
+  .font-family-#{$fname} {
+    font-family: $family;
+  }
+}
+/* theme font sizes */
+@function pxToRem($px-value) {
+  @return ($px-value / 16) + rem;
+}
+$fonts: 12, 13, 14, 16, 18,22, 24,30;
+@each $value in $fonts {
+  .fs-#{$value} {
+    font-size: pxToRem($value);
+  }
+}
+@for $size from 100 through 900 {
+  .font-weight-#{$size} {
+    font-weight: $size;
+  }
+}
+/* padding , margins , heights, and widths */
+@for $size from 0 through 500 {
+  .p-#{$size} {
+    padding: pxToRem($size);
+  }
+  .px-#{$size} {
+    padding-left: pxToRem($size);
+    padding-right: pxToRem($size);
+  }
+  .py-#{$size} {
+    padding-top: pxToRem($size);
+    padding-bottom: pxToRem($size);
+  }
+  .pt-#{$size} {
+    padding-top: pxToRem($size);
+  }
+  .pb-#{$size} {
+    padding-bottom: pxToRem($size);
+  }
+  .ps-#{$size} {
+    padding-left: pxToRem($size);
+  }
+  .pe-#{$size} {
+    padding-right: pxToRem($size);
+  }
+  .m-#{$size} {
+    margin: pxToRem($size);
+  }
+  .mx-#{$size} {
+    margin-left: pxToRem($size);
+    margin-right: pxToRem($size);
+  }
+  .my-#{$size} {
+    margin-top: pxToRem($size);
+    margin-bottom: pxToRem($size);
+  }
+  .mt-#{$size} {
+    margin-top: pxToRem($size);
+  }
+  .mb-#{$size} {
+    margin-bottom: pxToRem($size);
+  }
+  .ms-#{$size} {
+    margin-left: pxToRem($size);
+  }
+  .me-#{$size} {
+    margin-right: pxToRem($size);
+  }
+  .w-#{$size} {
+    width: pxToRem($size);
+  }
+  .h-#{$size} {
+    height: pxToRem($size);
+  }
+  .gap-#{$size} {
+    gap: pxToRem($size);
+  }
+}
+
+/* theme icons */
+@for $size from 1 through 50 {
+  .icon-#{$size} {
+    height: pxToRem($size);
+    width: pxToRem($size);
+  }
+}
+
+/* theme border radius */
+@each $name, $border in $borderRadius {
+  .rounded-#{$name} {
+    border-radius: pxToRem($border);
+  }
+}
+/* theme border radius */
+@each $name, $pos in $postions {
+  .position-#{$name} {
+    position: $pos;
+  }
+}
+ 
+
+/* vertical-center */
+@mixin vertical-center {
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* retina-image */
+@mixin retina-image($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+    (-o-min-device-pixel-ratio: 2.6/2),
+    (-webkit-min-device-pixel-ratio: 1.3),
+    (min-device-pixel-ratio: 1.3),
+    (min-resolution: 1.3dppx) {
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+/* text truncate */
+@mixin text-shorten {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
